@@ -1,5 +1,5 @@
-output "dynatrace_tag_ruless" {
+output "dynatrace_tag_ruleses" {
   description = "All dynatrace_tag_rules resources"
-  value       = azurerm_dynatrace_tag_rules.dynatrace_tag_ruless
+  value       = azurerm_dynatrace_tag_rules.dynatrace_tag_ruleses
 }
 

@@ -1,6 +1,6 @@
-variable "dynatrace_tag_ruless" {
+variable "dynatrace_tag_ruleses" {
   description = <<EOT
-Map of dynatrace_tag_ruless, attributes below
+Map of dynatrace_tag_ruleses, attributes below
 Required:
     - monitor_id
     - name
@@ -30,9 +30,9 @@ EOT
         name   = string
         value  = string
       }))
-      send_activity_logs_enabled               = optional(bool, false)
-      send_azure_active_directory_logs_enabled = optional(bool, false)
-      send_subscription_logs_enabled           = optional(bool, false)
+      send_activity_logs_enabled               = optional(bool) # Default: false
+      send_azure_active_directory_logs_enabled = optional(bool) # Default: false
+      send_subscription_logs_enabled           = optional(bool) # Default: false
     }))
     metric_rule = optional(object({
       filtering_tag = optional(object({
@@ -40,7 +40,7 @@ EOT
         name   = string
         value  = string
       }))
-      sending_metrics_enabled = optional(bool, false)
+      sending_metrics_enabled = optional(bool) # Default: false
     }))
   }))
 }
