@@ -1,3 +1,7 @@
+output "dynatrace_tag_ruleses_id" {
+  description = "Map of id values across all dynatrace_tag_ruleses, keyed the same as var.dynatrace_tag_ruleses"
+  value       = { for k, v in azurerm_dynatrace_tag_rules.dynatrace_tag_ruleses : k => v.id }
+}
 output "dynatrace_tag_ruleses_log_rule" {
   description = "Map of log_rule values across all dynatrace_tag_ruleses, keyed the same as var.dynatrace_tag_ruleses"
   value       = { for k, v in azurerm_dynatrace_tag_rules.dynatrace_tag_ruleses : k => v.log_rule }
