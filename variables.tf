@@ -25,21 +25,21 @@ EOT
     monitor_id = string
     name       = string
     log_rule = optional(object({
-      filtering_tag = optional(object({
+      filtering_tag = optional(list(object({
         action = string
         name   = string
         value  = string
-      }))
+      })))
       send_activity_logs_enabled               = optional(bool) # Default: false
       send_azure_active_directory_logs_enabled = optional(bool) # Default: false
       send_subscription_logs_enabled           = optional(bool) # Default: false
     }))
     metric_rule = optional(object({
-      filtering_tag = optional(object({
+      filtering_tag = optional(list(object({
         action = string
         name   = string
         value  = string
-      }))
+      })))
       sending_metrics_enabled = optional(bool) # Default: false
     }))
   }))

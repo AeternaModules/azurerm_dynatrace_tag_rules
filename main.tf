@@ -8,7 +8,7 @@ resource "azurerm_dynatrace_tag_rules" "dynatrace_tag_ruleses" {
     for_each = each.value.log_rule != null ? [each.value.log_rule] : []
     content {
       dynamic "filtering_tag" {
-        for_each = log_rule.value.filtering_tag != null ? [log_rule.value.filtering_tag] : []
+        for_each = log_rule.value.filtering_tag != null ? log_rule.value.filtering_tag : []
         content {
           action = filtering_tag.value.action
           name   = filtering_tag.value.name
@@ -25,7 +25,7 @@ resource "azurerm_dynatrace_tag_rules" "dynatrace_tag_ruleses" {
     for_each = each.value.metric_rule != null ? [each.value.metric_rule] : []
     content {
       dynamic "filtering_tag" {
-        for_each = metric_rule.value.filtering_tag != null ? [metric_rule.value.filtering_tag] : []
+        for_each = metric_rule.value.filtering_tag != null ? metric_rule.value.filtering_tag : []
         content {
           action = filtering_tag.value.action
           name   = filtering_tag.value.name
