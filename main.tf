@@ -1,5 +1,5 @@
-resource "azurerm_dynatrace_tag_rules" "dynatrace_tag_ruleses" {
-  for_each = var.dynatrace_tag_ruleses
+resource "azurerm_dynatrace_tag_rules" "dynatrace_tag_rules" {
+  for_each = var.dynatrace_tag_rules
 
   monitor_id = each.value.monitor_id
   name       = each.value.name

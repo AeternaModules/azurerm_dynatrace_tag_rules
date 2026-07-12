@@ -1,6 +1,6 @@
-variable "dynatrace_tag_ruleses" {
+variable "dynatrace_tag_rules" {
   description = <<EOT
-Map of dynatrace_tag_ruleses, attributes below
+Map of dynatrace_tag_rules, attributes below
 Required:
     - monitor_id
     - name
