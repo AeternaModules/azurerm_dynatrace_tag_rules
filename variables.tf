@@ -30,9 +30,9 @@ EOT
         name   = string
         value  = string
       })))
-      send_activity_logs_enabled               = optional(bool) # Default: false
-      send_azure_active_directory_logs_enabled = optional(bool) # Default: false
-      send_subscription_logs_enabled           = optional(bool) # Default: false
+      send_activity_logs_enabled               = optional(bool)
+      send_azure_active_directory_logs_enabled = optional(bool)
+      send_subscription_logs_enabled           = optional(bool)
     }))
     metric_rule = optional(object({
       filtering_tag = optional(list(object({
@@ -40,7 +40,7 @@ EOT
         name   = string
         value  = string
       })))
-      sending_metrics_enabled = optional(bool) # Default: false
+      sending_metrics_enabled = optional(bool)
     }))
   }))
 }
